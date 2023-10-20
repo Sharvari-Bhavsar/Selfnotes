@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "955578058606",
+    "project_id": "selfnotes-1a690",
+    "storage_bucket": "selfnotes-1a690.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955578058606:android:0ef3e1d9b9b7c98e90e37f",
+        "android_client_info": {
+          "package_name": "com.example.selfnotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANJ5etM4xPra0fRlJnB1VPDwA9Plsh0_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
