@@ -57,6 +57,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+    // ...
     private void signUp() {
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
@@ -78,15 +79,30 @@ public class SignUpActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             Toast.makeText(SignUpActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
-                            // You may want to send a verification email here
-                            // firebaseAuth.getCurrentUser().sendEmailVerification();
-                            finish();
+                            // Send email verification
+                            sendEmailVerification();
                         } else {
                             Toast.makeText(SignUpActivity.this, "Sign-up failed. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
+
+    private void sendEmailVerification() {
+        firebaseAuth.getCurrentUser().sendEmailVerification()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignUpActivity.this, "Email verification sent. Please check your email.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "Failed to send email verification: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+// ...
+
 
 
     private boolean validateData(String email, String password, String confirmPassword) {
