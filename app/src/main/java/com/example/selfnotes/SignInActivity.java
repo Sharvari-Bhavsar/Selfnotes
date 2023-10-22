@@ -1,5 +1,6 @@
 package com.example.selfnotes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,7 +50,8 @@ public class SignInActivity extends AppCompatActivity {
         signUpLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Add code to navigate to your sign-up page here
+                startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
+                finish();
             }
         });
     }
@@ -70,12 +72,14 @@ public class SignInActivity extends AppCompatActivity {
                         signInButton.setEnabled(true);
 
                         if (task.isSuccessful()) {
-                            if (firebaseAuth.getCurrentUser().isEmailVerified()) {
+//
+//                            if (firebaseAuth.getCurrentUser().isEmailVerified()) {
                                 Toast.makeText(SignInActivity.this, "Sign-in successful!", Toast.LENGTH_SHORT).show();
-                                // Add code to navigate to your main app screen or home page here
-                            } else {
-                                Toast.makeText(SignInActivity.this, "Email not verified. Please check your email for a verification link.", Toast.LENGTH_SHORT).show();
-                            }
+                                  startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                                  finish();
+//                            } else {
+//                                Toast.makeText(SignInActivity.this, "Email not verified. Please check your email for a verification link.", Toast.LENGTH_SHORT).show();
+//                            }
                         } else {
                             Toast.makeText(SignInActivity.this, "Sign-in failed. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

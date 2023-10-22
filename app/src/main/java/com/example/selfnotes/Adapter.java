@@ -31,6 +31,8 @@ public class Adapter extends FirestoreRecyclerAdapter<Note, Adapter.NoteViewHold
         holder.contentTextView.setText(note.content);
         holder.timestampTextView.setText(Utility.timestampToString(note.timestamp));
 
+
+        // for editing note we or deleting note we are dealing with title,content and its ID (unique)
         holder.itemView.setOnClickListener((v)->{
             Intent intent = new Intent(context,NoteDetailActivity.class);
             intent.putExtra("title",note.title);
