@@ -6,17 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/darkblue"
-    android:padding="16dp"
-    >
+    android:padding="16dp">
 
 
-    <Button
-        android:id="@+id/to_signupbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Button"
-       />
+    <RelativeLayout
+        android:id="@+id/Title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notes"
+            android:textSize="32sp"
+            android:textColor="@color/lightblue"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:id="@+id/menubtn_container"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Open menu"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageButton
+                android:id="@+id/menubtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/baseline_menu_24"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lightblue"
+                android:background="@drawable/rounded_corner"
+                android:contentDescription="Open menu" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Title_layout"
+        android:background="@color/darkblue"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -27,6 +63,6 @@
         android:src="@android:drawable/ic_input_add"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:contentDescription="Add a new note" />
 
-        />
 </RelativeLayout>

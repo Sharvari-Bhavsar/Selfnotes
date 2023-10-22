@@ -1,13 +1,13 @@
 package com.example.selfnotes;
 
-import com.google.firebase.firestore.FieldValue;
 
-// this is model class
+
+import com.google.firebase.Timestamp;
+
 public class Note {
     String title;
     String content;
-    //Timestamp is firebase class
-    FieldValue timestamp;
+    Timestamp timestamp;
 
     public Note() {
     }
@@ -28,11 +28,11 @@ public class Note {
         this.content = content;
     }
 
-    public FieldValue getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(FieldValue timestamp) {
+    public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
 }

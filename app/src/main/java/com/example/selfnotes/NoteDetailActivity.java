@@ -1,6 +1,6 @@
 package com.example.selfnotes;
 
-import android.content.Intent;
+;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,10 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FieldValue;
-
-import java.security.Timestamp;
 
 
 public class NoteDetailActivity extends AppCompatActivity {
@@ -57,8 +55,9 @@ public class NoteDetailActivity extends AppCompatActivity {
         Note note = new Note();
         note.setTitle(noteTitle);
         note.setContent(noteContent);
+        note.setTimestamp(Timestamp.now());
 
-        note.setTimestamp(FieldValue.serverTimestamp());
+
 
         saveNoteToFirebase(note);
 

@@ -17,20 +17,20 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         //handle to handle postDelayed method in which Runnable interface is passed
-         new Handler().postDelayed(new Runnable() {
-             @Override
-             public void run() {
-                 //if user is login already go to main Activity
-                 FirebaseUser currentUser  = FirebaseAuth.getInstance().getCurrentUser();
-                 if(currentUser==null){
-                     startActivity(new Intent(SplashActivity.this, SignInActivity.class));
-                 }
-                 else{
-                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                 }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //if user is login already go to main Activity
+                FirebaseUser currentUser  = FirebaseAuth.getInstance().getCurrentUser();
+                if(currentUser==null){
+                    startActivity(new Intent(SplashActivity.this, SignInActivity.class));
+                }
+                else{
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                }
 
-                 finish();// so that when we press back button splash screen is not visible
-             }
-         },2000);
+                finish();// so that when we press back button splash screen is not visible
+            }
+        },2000);
     }
 }

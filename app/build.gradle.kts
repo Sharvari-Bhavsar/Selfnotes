@@ -42,4 +42,10 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // FirebaseUI for Cloud Firestore
+    // to user firebase in recycler view we need to  Adapter to be inherited from fireStore recycler adapter
+    implementation("com.firebaseui:firebase-ui-firestore:8.0.2")
+
+
 }
